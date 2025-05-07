@@ -11,13 +11,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+       // EdgeToEdge.enable(this);
+        setContentView(new MyView(this));
+        /*setContentView(R.layout.activity_main);
+
         Button b = (Button) findViewById(R.id.button);
         b.setOnClickListener(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -25,12 +27,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+*/
     }
 
-    @Override
+   /* @Override
     public void onClick(View v){
         Toast.makeText(this, "アプリを終了しました", Toast.LENGTH_SHORT).show();
         finish();
-    }
+    }*/
 }
