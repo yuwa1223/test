@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_frame"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
+    <jp.ac.gifu_u.info.watanabe.myapplication_2025_0423.CameraView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!-- 光センサーの値表示 -->
     <TextView
         android:id="@+id/status_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="明るさを表示"
+        android:text="光の強さ"
         android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textColor="#FFFFFF"
+        android:background="#88000000"
+        android:padding="8dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 終了ボタン -->
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="終了"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="32dp"
+        android:padding="12dp" />
+</FrameLayout>
 
 
     <!--   <TextView-->
